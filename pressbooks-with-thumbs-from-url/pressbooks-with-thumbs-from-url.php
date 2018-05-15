@@ -66,7 +66,7 @@ function thumbnail_url_field( $html ) {
 	if ( ! empty($value) && url_is_image( $value ) ) {
 		$html .= '<p><img style="max-width:150px;height:auto;" src="'
 		         . esc_url($value) . '"></p>';
-		$html .= '<p>' . __( 'Leave url blank to remove.', 'txtdomain' ) . '</p>';
+		$html .= '<p>' . __( 'Leave url blank to remove.') . '</p>';
 	}
 	$html .= '</div>';
 	return $html;
@@ -247,3 +247,8 @@ function AddThumbValue($column_name, $post_id) {
 	add_filter( 'manage_back-matter_posts_columns', 'AddThumbColumn' );
 	add_action( 'manage_back-matter_posts_custom_column', 'AddThumbValue', 10, 2 );
 //<
+
+//adding new featured images sizes
+add_image_size( 'featured-narrow', 540 );
+add_image_size( 'featured-standard', 720 );
+add_image_size( 'featured-wide', 864 );
