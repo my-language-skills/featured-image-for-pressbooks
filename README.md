@@ -17,10 +17,13 @@ with addition of visual control of attached thumbnail and support of PressBooks 
 
 ## Installation
 
-1. Clone or download this repository to your host.
-1. Extract plugin folder to to the `/wp-content/plugins/` directory.
+1. Clone or download this repository to your host ```/wp-content/plugins/```.
 1. Activate the plugin through the 'Plugins' screen in WordPress.
 
+## Frequently Asked Questions
+* [General Documentation](doc/documentation-general.md)
+* [Technical Documentation](doc/documentation-technical.md)
+* [The Folder Structure](doc/folder-structure.md)
 
 ## Requirements
 
