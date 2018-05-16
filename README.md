@@ -51,7 +51,7 @@ You can see all of the screenshots of the theme [here](https://github.com/my-lan
     * default featured image
     
 ## Changelog
-###0.1
+### 0.1
 * **ADDITIONS**
     * Use a media stored image as a featured image
     * Use an external image as a featured image via URL
