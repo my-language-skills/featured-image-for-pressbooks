@@ -1,5 +1,5 @@
 # Featured Image Pressboks CPTs
-A WordPress extension plugin for PressBooks open framework
+A WordPress plugin that extends PressBooks.
 
 Contributors: @danzhik
 
