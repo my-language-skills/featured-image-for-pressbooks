@@ -46,8 +46,18 @@ You can see all of the screenshots of the theme [here](https://github.com/my-lan
 
 ## Roadmap
 
-* First releaze of plugin
-* Basic functionality according to description
+### 0.x
+* **ADDITIONS**
+    * default featured image
+    
+## Changelog
+###0.1
+* **ADDITIONS**
+    * Use a media stored image as a featured image
+    * Use an external image as a featured image via URL
+    * Set appropriate featured image size according to Pressbooks books sizes
+    * Monitor featured images from posts administration area
+    
 
 
 
