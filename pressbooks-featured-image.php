@@ -252,3 +252,15 @@ function AddThumbValue($column_name, $post_id) {
 add_image_size( 'featured-narrow', 540 );
 add_image_size( 'featured-standard', 720 );
 add_image_size( 'featured-wide', 864 );
+
+/*
+* Auto update from github
+*
+* @since 0.1
+*/
+require 'vendor/plugin-update-checker/plugin-update-checker.php';
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+    'https://github.com/my-language-skills/pressbooks-featured-image/',
+    __FILE__,
+    'pressbooks-featured-image'
+);
