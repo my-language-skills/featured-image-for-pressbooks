@@ -41,7 +41,8 @@ Plugin works with:
 
 The Featured Image for Pressboks CPTs is supplied "as is" and all use is at your own risk.
 
-
+## Screenshots 
+You can see all of the screenshots of the theme [here](https://github.com/my-language-skills/pressbooks-b4l-child/blob/developer/books-for-languages-theme/screeenshots/screenshots.md).
 
 ## Roadmap
 
