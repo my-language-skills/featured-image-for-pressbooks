@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Plugin Name: Featured image PressBooks CPTs
+ * Plugin Name: Featured Image for PressBooks CPTs
  * Description: Use an external image as Featured Image of your post/page, add support of thumbnails in PressBooks CPTs and add administration columns to check featured image status.
  * Version: 0.1
  * Author: Daniil Zhitnitskii

@@ -1,4 +1,4 @@
-# Featured Image Pressboks CPTs Technical Documentation
+# Featured Image for Pressboks CPTs Technical Documentation
 
 ## Installation and Upgrades
 1. Clone (or copy) this [repository](https://github.com/my-language-skills/pressbooks-featured-image)(not official release yet) to the ```/wp-content/plugins/``` directory
@@ -7,7 +7,7 @@
 For upgrades, download the last stable version from Github, delete from FTP the old Plugin and install the new one.
 
 ## Theme support 
-In order to properly utilize any feature of Featured Image Pressboks CPTs the theme or child theme of Pressbooks you are goin gto use on your web-site **must** support featured images.
+In order to properly utilize any feature of Featured Image for Pressboks CPTs the theme or child theme of Pressbooks you are goin gto use on your web-site **must** support featured images.
 
 If you would like to use our plugin with the one, which does not have featured images included support, below is the guide how to make your theme compatible with them.
 
