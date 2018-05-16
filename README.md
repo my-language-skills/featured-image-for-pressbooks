@@ -7,7 +7,7 @@ Tags: thumbnails, pressbooks
 
 ## Community / Support
 
-You can contact us via our chat [Gitter](https://gitter.im/books4languages/)                                    
+You can contact us via our [chat](https://gitter.im/books4languages/)  and talk to us.                                  
 
 
 ## Description
