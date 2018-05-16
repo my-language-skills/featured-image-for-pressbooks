@@ -59,7 +59,7 @@ You can see all of the screenshots of the theme [here](https://github.com/my-lan
     * Monitor featured images from posts administration area
     
 
-
+## Upgrade Notice
 
 ## Credits
 Here's a link to [Alecaddd](http://www.alecaddd.com/) [WordPressPlugin101](https://github.com/Alecaddd/WordPressPlugin101) on [YouTube](https://www.youtube.com/playlist?list=PLriKzYyLb28kR_CPMz8uierDWC2y3znI2).
