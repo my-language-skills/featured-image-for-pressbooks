@@ -7,7 +7,7 @@ Tags: thumbnails, pressbooks
 
 ## Community / Support
 
-You can text me via email danonchik98@gmail.com.
+You can contact us via our chat [Gitter](https://gitter.im/books4languages/)                                    
 
 
 ## Description
