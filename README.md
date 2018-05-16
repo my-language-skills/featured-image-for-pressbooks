@@ -34,8 +34,8 @@ with addition of visual control of attached thumbnail and support of PressBooks 
 Plugin works with:
 
  * ![PHP](https://img.shields.io/badge/PHP-7.X-blue.svg)
- - [![WordPress](https://img.shields.io/badge/Wordpress-4.9.5-green.svg)](https://codex.wordpress.org/Version_4.9.5)
- - [![Pressbooks](https://img.shields.io/badge/Pressbooks-V%205.3.0-red.svg)](https://github.com/pressbooks/pressbooks/releases/tag/5.3.0)
+ * [![WordPress](https://img.shields.io/badge/Wordpress-4.9.5-green.svg)](https://codex.wordpress.org/Version_4.9.5)
+ * [![Pressbooks](https://img.shields.io/badge/Pressbooks-V%205.3.0-red.svg)](https://github.com/pressbooks/pressbooks/releases/tag/5.3.0)
 
 ## Disclaimers
 
