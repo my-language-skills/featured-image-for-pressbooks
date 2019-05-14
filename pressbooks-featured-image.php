@@ -268,3 +268,7 @@ $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
     'pressbooks-featured-image'
 );
 
+
+add_action( 'after_setup_theme', function () {
+	add_theme_support( 'post-thumbnails' );
+} );
