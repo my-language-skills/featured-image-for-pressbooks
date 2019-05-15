@@ -3,7 +3,7 @@
 /*
  * Plugin Name: Featured Image for PressBooks CPTs
  * Description: Use an external image as Featured Image of your post/page, add support of thumbnails in PressBooks CPTs and add administration columns to check featured image status.
- * Version: 0.1
+ * Version: 0.2
  * Author: Daniil Zhitnitskii
  * Author URI: https://www.linkedin.com/in/daniil-zhitnitskii/
  */
@@ -256,6 +256,12 @@ add_image_size( 'featured-standard', 720 );
 add_image_size( 'featured-wide', 864 );
 
 
+
+// activate the post-thumbails
+add_action( 'after_setup_theme', function () {
+	add_theme_support( 'post-thumbnails' );
+} );
+
 /*
 * Auto update from github
 *
@@ -263,12 +269,7 @@ add_image_size( 'featured-wide', 864 );
 */
 require 'vendor/plugin-update-checker/plugin-update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-    'https://github.com/my-language-skills/pressbooks-featured-image/',
+    'https://github.com/my-language-skills/featured-image-for-pressbooks/',
     __FILE__,
-    'pressbooks-featured-image'
+    'featured-image-for-pressbooks'
 );
-
-
-add_action( 'after_setup_theme', function () {
-	add_theme_support( 'post-thumbnails' );
-} );

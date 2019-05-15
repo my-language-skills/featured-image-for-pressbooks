@@ -1,7 +1,7 @@
 # Featured Image for Pressboks CPTs
 A WordPress plugin that extends PressBooks.
 
-Contributors: @danzhik
+Contributors: @danzhik @huguespages
 
 Tags: thumbnails, pressbooks
 
@@ -41,7 +41,7 @@ Plugin works with:
 
 The Featured Image for Pressboks CPTs is supplied "as is" and all use is at your own risk.
 
-## Screenshots 
+## Screenshots
 You can see all of the screenshots of the theme [here](https://github.com/my-language-skills/pressbooks-featured-image/blob/developer/screenshots/screenshots.md).
 
 ## Roadmap
@@ -49,15 +49,24 @@ You can see all of the screenshots of the theme [here](https://github.com/my-lan
 ### 0.x
 * **ADDITIONS**
     * default featured image
-    
+
 ## Changelog
+
+### 0.2
+* **ADDITIONS**
+    * Activate the post-thumbnails in theme
+
+* **ENCHANCEMENTS**
+    * New file name
+    * Change autolauder parameters
+
 ### 0.1
 * **ADDITIONS**
     * Use a media stored image as a featured image
     * Use an external image as a featured image via URL
     * Set appropriate featured image size according to Pressbooks books sizes
     * Monitor featured images from posts administration area
-    
+
 
 ## Upgrade Notice
 
@@ -65,4 +74,3 @@ You can see all of the screenshots of the theme [here](https://github.com/my-lan
 Here's a link to [Alecaddd](http://www.alecaddd.com/) [WordPressPlugin101](https://github.com/Alecaddd/WordPressPlugin101) on [YouTube](https://www.youtube.com/playlist?list=PLriKzYyLb28kR_CPMz8uierDWC2y3znI2).
 
 Here's a link to [WordPress](http://wordpress.org/ "Your favorite software").
-
