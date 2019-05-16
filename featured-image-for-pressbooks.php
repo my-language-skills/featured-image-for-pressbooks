@@ -3,7 +3,7 @@
 /*
  * Plugin Name: Featured Image for PressBooks CPTs
  * Description: Use an external image as Featured Image of your post/page, add support of thumbnails in PressBooks CPTs and add administration columns to check featured image status.
- * Version: 0.2
+ * Version: 0.3
  * Author: Daniil Zhitnitskii
  * Author URI: https://www.linkedin.com/in/daniil-zhitnitskii/
  */
@@ -251,9 +251,9 @@ function AddThumbValue($column_name, $post_id) {
 //<
 
 //adding new featured images sizes
-add_image_size( 'featured-narrow', 540 );
-add_image_size( 'featured-standard', 720 );
-add_image_size( 'featured-wide', 864 );
+add_image_size( 'featured-narrow', 508 );
+add_image_size( 'featured-standard', 688 );
+add_image_size( 'featured-wide', 832 );
 
 
 

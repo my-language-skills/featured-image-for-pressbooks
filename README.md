@@ -47,10 +47,11 @@ You can see all of the screenshots of the theme [here](https://github.com/my-lan
 ## Roadmap
 
 ### 0.x
-* **ADDITIONS**
-    * default featured image
 
 ## Changelog
+### 0.3
+* **ENCHANCEMENTS**
+    * Set good size
 
 ### 0.2
 * **ADDITIONS**
