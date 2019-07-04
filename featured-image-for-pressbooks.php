@@ -3,7 +3,7 @@
 /*
  * Plugin Name: Featured Image for PressBooks
  * Description: Use an external image as Featured Image of your post/page, add support of thumbnails in PressBooks CPTs and add administration columns to check featured image status.
- * Version: 0.3
+ * Version: 0.4
  * Author: Daniil Zhitnitskii & Hugues Pages
  * Author URI: https://www.linkedin.com/in/daniil-zhitnitskii/
  */
@@ -268,6 +268,7 @@ add_action( 'after_setup_theme', function () {
  *
  *
  * @since 0.3
+ * @since 0.4 Change value of image_size
  */
 
 function use_new_image_size() {
@@ -287,7 +288,8 @@ add_action( 'after_setup_theme', 'use_new_image_size' );
  *
  * @param string $sizes size
  *
- * @since 0.3
+ * @since 0.4
+ * @return '$sizes'
  */
 function function_register($sizes){
 	// creation of data
@@ -316,7 +318,8 @@ function function_register($sizes){
  *
  * @param string $sizes size
  *
- * @since 0.3
+ * @since 0.4
+ * @return '$sizes' '$custom_sizes'
  */
 
 function create_custom_image_size($sizes){
