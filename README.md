@@ -59,7 +59,8 @@ You can see all of the screenshots of the theme [here](https://github.com/my-lan
   * New sizes in attachment display settinngs. By default is selected the size of the blog.
 
 * **ADDITIONS**
-      * Add uptdate metadata
+  * Add uptdate metadata
+
 
 * **List of Files revised**
        * featured-image-for-pressbooks.php
