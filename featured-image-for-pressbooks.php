@@ -388,7 +388,7 @@ function my_set_image_meta_upon_image_upload( $post_ID ) {
 /*
 * Auto update from github
 *
-* @since 0.3
+* @since 0.2
 */
 require 'vendor/plugin-update-checker/plugin-update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
