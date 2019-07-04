@@ -1,22 +1,14 @@
 # Featured Image for Pressboks CPTs
 
-Contributors: @danzhik @huguespages   
-
-Donate link:
-
-Tags: thumbnails, pressbooks
-
-Requires at least: 3.0.1
-
-Tested up to: 5.2.2
-
-Requires PHP: 5.6.0
-
-Stable tag: 0.4
-
-License: GNU 3.0
-
-License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
+* Contributors: @danzhik @huguespages   
+* Donate link:
+* Tags: thumbnails, pressbooks
+* Requires at least: 3.0.1
+* Tested up to: 5.2.2
+* Requires PHP: 5.6.0
+* Stable tag: 0.4
+* License: GNU 3.0
+* License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
 A WordPress plugin that extends PressBooks with new image sizes and feature image.
 
@@ -30,7 +22,7 @@ You can contact us via our [chat](https://gitter.im/books4languages/)  and talk 
 Featured Image for Pressbooks CPTs extends basic PressBooks plugin functionality by supporting thumbnails for all kinds of posts and also provides an ability to set thumbnail with external link,
 with addition of visual control of attached thumbnail and support of PressBooks book sizes in front-end and in text area.
 
-By activating, Pressbooks CPTs will create new media sizes with the same Width as the Webbook Width in theme options (508 for Narrow; 688 for Standard; 832 for Wide).
+By activating, Pressbooks CPTs will create new media sizes with the same Width as the Webbook Width in theme options (**508** for Narrow; **688** for Standard; **832** for Wide).
 * A feature image will choose the same image size as the Webbook Width (Narrow, Standard or Wide)
 * The attachment display settinngs will create one new size (selected by default) with the same Width of the Webbook Width (Narrow or Standard or Wide)
 
