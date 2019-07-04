@@ -262,7 +262,14 @@ add_action( 'after_setup_theme', function () {
 	add_theme_support( 'post-thumbnails' );
 } );
 
-// creation of the new size
+
+/**
+ * Creation of the new size
+ *
+ *
+ * @since 0.3
+ */
+
 function use_new_image_size() {
     if ( function_exists( 'add_image_size' ) ) {
         add_image_size( 'featured-narrow', 508, 0, false );
@@ -274,7 +281,14 @@ function use_new_image_size() {
 }
 add_action( 'after_setup_theme', 'use_new_image_size' );
 
-// function to register and change the first one connect
+
+/**
+ * function to register and change the first one connect
+ *
+ * @param string $sizes size
+ *
+ * @since 0.3
+ */
 function function_register($sizes){
 	// creation of data
 	$temp = $sizes['thumbnail'];
@@ -297,7 +311,14 @@ function function_register($sizes){
 	return $sizes;
 
 }
-// create and add the new size in the select of administration
+/**
+ * create and add the new size in the select of administration
+ *
+ * @param string $sizes size
+ *
+ * @since 0.3
+ */
+
 function create_custom_image_size($sizes){
 	$options = get_option( 'pressbooks_theme_options_web' );
 		$width   = $options['webbook_width'];
