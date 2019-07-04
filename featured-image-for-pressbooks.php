@@ -350,33 +350,18 @@ add_filter('image_size_names_choose', 'function_register');
 // add uptade the size of the default size
 update_option( 'image_default_size', 'create_custom_image_size' );
 ?>
+
 <?php
-/*
-* Auto update from github
-*
-* @since 0.1
-*/
-require 'vendor/plugin-update-checker/plugin-update-checker.php';
-$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-    'https://github.com/my-language-skills/featured-image-for-pressbooks/',
-    __FILE__,
-    'featured-image-for-pressbooks'
-);
 
-
-
-
----
-
-
-
-
-
-/* Automatically set the image Title, Alt-Text, Caption & Description upon upload
-http://brutalbusiness.com/automatically-set-the-wordpress-image-title-alt-text-other-meta/
-for adding the tags and categories: https://wordpress.org/plugins/seo-image/
---------------------------------------------------------------------------------------*/
 add_action( 'add_attachment', 'my_set_image_meta_upon_image_upload' );
+
+/**
+ * Automatically set the image Title, Alt-Text, Caption & Description upon upload http://brutalbusiness.com/automatically-set-the-wordpress-image-title-alt-text-other-meta/ for adding the tags and categories: https://wordpress.org/plugins/seo-image/
+ *
+ * @param string $post_ID post_id
+ *
+ * @since 0.4
+ */
 function my_set_image_meta_upon_image_upload( $post_ID ) {
 	// Check if uploaded file is an image, else do nothing
 	if ( wp_attachment_is_image( $post_ID ) ) {
@@ -399,3 +384,15 @@ function my_set_image_meta_upon_image_upload( $post_ID ) {
 		wp_update_post( $my_image_meta );
 	}
 }
+
+/*
+* Auto update from github
+*
+* @since 0.1
+*/
+require 'vendor/plugin-update-checker/plugin-update-checker.php';
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+    'https://github.com/my-language-skills/featured-image-for-pressbooks/',
+    __FILE__,
+    'featured-image-for-pressbooks'
+);
