@@ -46,8 +46,12 @@ You can see all of the screenshots of the theme [here](https://github.com/my-lan
 
 ## Roadmap
 
-### 0.x
+### 0.X.X
+* **ENCHANCEMENTS**
+    * In a custom post type, add the size of default size of the blog. And select by default, the default size
 
+* **List of Files revised**
+       * featured-image-for-pressbooks.php
 ## Changelog
 ### 0.3
 * **ENCHANCEMENTS**

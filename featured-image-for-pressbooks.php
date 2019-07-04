@@ -4,7 +4,7 @@
  * Plugin Name: Featured Image for PressBooks
  * Description: Use an external image as Featured Image of your post/page, add support of thumbnails in PressBooks CPTs and add administration columns to check featured image status.
  * Version: 0.3
- * Author: Daniil Zhitnitskii
+ * Author: Daniil Zhitnitskii & Hugues Pages
  * Author URI: https://www.linkedin.com/in/daniil-zhitnitskii/
  */
 
@@ -262,6 +262,71 @@ add_action( 'after_setup_theme', function () {
 	add_theme_support( 'post-thumbnails' );
 } );
 
+// creation of the new size
+function use_new_image_size() {
+    if ( function_exists( 'add_image_size' ) ) {
+        add_image_size( 'featured-narrow', 508, 0, false );
+				add_image_size( 'featured-standard', 688,0, false  );
+				add_image_size( 'featured-wide', 832,0, false  );
+
+
+    }
+}
+add_action( 'after_setup_theme', 'use_new_image_size' );
+
+// function to register and change the first one connect
+function function_register($sizes){
+	// creation of data
+	$temp = $sizes['thumbnail'];
+	$temp1 = $sizes['medium'];
+	$temp2 = $sizes['large'];
+	$temp3 = $sizes['full'];
+
+	// unset data
+	unset( $sizes['thumbnail']);
+ unset( $sizes['medium']);
+ unset( $sizes['large']);
+ unset( $sizes['full']);
+
+ // creation of the new order
+ $sizes['thumbnail'] = $temp;
+ $sizes['medium'] = $temp1;
+ $sizes['large'] = $temp2;
+ $sizes['full'] = $temp3;
+
+	return $sizes;
+
+}
+// create and add the new size in the select of administration
+function create_custom_image_size($sizes){
+	$options = get_option( 'pressbooks_theme_options_web' );
+		$width   = $options['webbook_width'];
+		if ($width == '40em') {
+					$custom_sizes = array(
+			'featured-standard' => 'Standard');
+			?><?php
+		}
+		if ($width == '30em') {
+			$custom_sizes = array(
+				'featured-narrow' => 'Narrow'
+			);?><?php
+		}
+		if ($width == '48em') {
+			$custom_sizes = array(
+				'featured-wide' => 'Wide'
+			);
+		}
+
+    return array_merge( $sizes, $custom_sizes );
+}
+// add new filter of the new size
+add_filter('image_size_names_choose', 'create_custom_image_size');
+// add new change the older of the list
+add_filter('image_size_names_choose', 'function_register');
+// add uptade the size of the default size
+update_option( 'image_default_size', 'create_custom_image_size' );
+?>
+<?php
 /*
 * Auto update from github
 *
