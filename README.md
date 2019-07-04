@@ -6,7 +6,7 @@
 * Requires at least: 3.0.1
 * Tested up to: 5.2.2
 * Requires PHP: 5.6.0
-* Stable tag: 0.4
+* Stable tag: 0.5
 * License: GNU 3.0
 * License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -54,6 +54,10 @@ You can see all of the screenshots of the theme [here](https://github.com/my-lan
 ## Roadmap
 
 ## Changelog
+### 0.5
+* **REMOVED**
+    *  Autolauder
+
 ### 0.4
 * **ENCHANCEMENTS**
   * New sizes in attachment display settinngs. By default is selected the size of the blog.

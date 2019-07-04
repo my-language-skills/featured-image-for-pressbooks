@@ -3,7 +3,7 @@
 /*
  * Plugin Name: Featured Image for PressBooks
  * Description: Use an external image as Featured Image of your post/page, add support of thumbnails in PressBooks CPTs and add administration columns to check featured image status.
- * Version: 0.4
+ * Version: 0.5
  * Author: Daniil Zhitnitskii & Hugues Pages
  * Author URI: https://www.linkedin.com/in/daniil-zhitnitskii/
  */
@@ -384,15 +384,3 @@ function my_set_image_meta_upon_image_upload( $post_ID ) {
 		wp_update_post( $my_image_meta );
 	}
 }
-
-/*
-* Auto update from github
-*
-* @since 0.2
-*/
-require 'vendor/plugin-update-checker/plugin-update-checker.php';
-$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-    'https://github.com/my-language-skills/featured-image-for-pressbooks/',
-    __FILE__,
-    'featured-image-for-pressbooks'
-);
