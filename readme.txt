@@ -1,7 +1,7 @@
-=== All in one metadata ===
+=== Feature image for PressBooks ===
 Contributors: colomet, danzhik, huguespages
 Donate link: https://opencollective.com/mylanguageskills
-Tags: schema, schema.org, metadata, rich snippets, structured data
+Tags: multisite, pressbooks, images, media, thumbnail, feature-image, wordpress plugin
 Requires at least: 3.0.1
 Tested up to: 5.2.2
 Requires PHP: 5.6
@@ -9,10 +9,19 @@ Stable tag: 0.5
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Use an external image as Featured Image of your post/page, add support of thumbnails in PressBooks CPTs and add administration columns to check featured image status.
+You can have features images and to use post size images in your PressBooks site
+
+**Only works with multisite installation!**
+
 == Description ==
 
-soon
+This plugin provides the possibility to use images adapted to a PressBooks installation. Features:
+* Use an external image as Featured Image of your PressBooks CPTs.
+* Add support of thumbnails in PressBooks CPTs.
+* Add administration columns to check featured image status.
+* New images with the post max size (narrow - 508px, standard - 688px, wide - 832px)
+* New sizes in attachment display settinngs. By default is selected the size of the blog.
+
 == Installation ==
 
 1. Clone (or copy) this repository folder `featured-image-for-pressbooks` to the `/wp-content/plugins/` directory
@@ -40,6 +49,4 @@ First release
 
 == Disclaimers ==
 
-The Featured Image for PressBooks plugin is supplied "as is" and all use is at your own risk.
-
-Featured Image for PressBooks is under development. Version 1.0 is stable but is an start. Soon much more possibilities.
+The Featured image for PressBooks plugin is supplied "as is" and all use is at your own risk.
