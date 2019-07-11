@@ -1,5 +1,34 @@
 <?php
 
+/**
+ * Featured Image for PressBooks
+ *
+ * This file is read by WordPress to generate the plugin information in the plugin
+ * admin area. This file also includes all of the dependencies used by the plugin,
+ * registers the activation and deactivation functions, and defines a function
+ * that starts the plugin.
+ *
+ * @link              https://github.com/my-language-skills/featured-image-for-pressbooks
+ * @since             0.1
+ * @package           featured-image-for-pressbooks
+ *
+ * @wordpress-plugin
+ * Plugin Name:       Featured Image for PressBooks
+ * Plugin URI:        https://github.com/my-language-skills/featured-image-for-pressbooks
+ * Description:       Use an external image as Featured Image of your post/page, add support of thumbnails in PressBooks CPTs and add administration columns to check featured image status.
+ * Version:           0.5
+ * Author:            My Language Skills team
+ * Author URI:        https://github.com/my-language-skills/
+ * License:           GPL 3.0
+ * License URI:       http://www.gnu.org/licenses/gpl-3.0.txt
+ * Text Domain:       featured-image-for-pressbooks
+ * Domain Path:       /languages
+ */
+
+
+
+
+
 /*
  * Plugin Name: Featured Image for PressBooks
  * Description: Use an external image as Featured Image of your post/page, add support of thumbnails in PressBooks CPTs and add administration columns to check featured image status.
