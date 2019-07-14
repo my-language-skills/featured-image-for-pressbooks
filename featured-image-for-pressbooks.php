@@ -23,28 +23,19 @@
  * License URI:       http://www.gnu.org/licenses/gpl-3.0.txt
  * Text Domain:       featured-image-for-pressbooks
  * Domain Path:       /languages
+ * Network: 					True
  */
 
-
-
-
-
-/*
- * Plugin Name: Featured Image for PressBooks
- * Description: Use an external image as Featured Image of your post/page, add support of thumbnails in PressBooks CPTs and add administration columns to check featured image status.
- * Version: 0.5
- * Author: Daniil Zhitnitskii & Hugues Pages
- * Author URI: https://www.linkedin.com/in/daniil-zhitnitskii/
- */
 
 /**
- * Checking whether provided URL leads to image file of jpeg, jpg, gif, png formats
+ * Checking whether provided URL leads to image file of jpeg, jpg, gif, png formats.
  *
  * @param string $url URL to check
  *
  * @return bool result of check
  *
  * @since 0.1
+ *
  */
 function url_is_image( $url ) {
 
@@ -65,13 +56,14 @@ function url_is_image( $url ) {
 }
 
 /**
- * Add URL field to Featured Image metabox
+ * Add URL field to Featured Image metabox.
  *
  * @param string $html Featured Image metabox HTML code
  *
  * @return string Featured Image metabox HTML code with URL field
  *
  * @since 0.1
+ *
  */
 function thumbnail_url_field( $html ) {
 
@@ -102,12 +94,13 @@ function thumbnail_url_field( $html ) {
 }
 
 /**
- * Save external image URL value in post meta
+ * Save external image URL value in post meta.
  *
  * @param int $pid post ID
  * @param WP_Post $post post object
  *
  * @since 0.1
+ *
  */
 function thumbnail_url_field_save( $pid, $post ) {
 
@@ -154,7 +147,7 @@ function thumbnail_url_field_save( $pid, $post ) {
 }
 
 /**
- * Create an HTML image container for external featured image
+ * Create an HTML image container for external featured image.
  *
  * @param string $html post HTML code
  * @param int $post_id post ID
@@ -162,6 +155,7 @@ function thumbnail_url_field_save( $pid, $post ) {
  * @return string updated HTML code of post
  *
  * @since 0.1
+ *
  */
 function thumbnail_external_replace( $html, $post_id ) {
 
@@ -190,9 +184,10 @@ function thumbnail_external_replace( $html, $post_id ) {
 }
 
 /**
- * Add support of featured images to PressBooks post types
+ * Add support of featured images to PressBooks post types.
  *
- *@since 0.1
+ * @since 0.1
+ *
  */
 function add_thumbnail_support () {
 	add_post_type_support( 'chapter', 'thumbnail' );
@@ -216,13 +211,14 @@ add_filter( 'post_thumbnail_html', 'thumbnail_external_replace', 10, PHP_INT_MAX
 if ( !function_exists('AddThumbColumn')) {
 
 	/**
-	 * Adding featured image column to administration area
+	 * Adding featured image column to administration area.
 	 *
 	 * @param array $cols existing columns
 	 *
 	 * @return mixed updated columns
 	 *
 	 * @since 0.1
+	 *
 	 */
 	function AddThumbColumn( $cols ) {
 
@@ -233,12 +229,13 @@ if ( !function_exists('AddThumbColumn')) {
 }
 
 /**
- * Set values of featured images columns in admin area
+ * Set values of featured images columns in admin area.
  *
  * @param string $column_name column name
  * @param int $post_id post ID
  *
  * @since 0.1
+ *
  */
 function AddThumbValue($column_name, $post_id) {
 
@@ -293,11 +290,12 @@ add_action( 'after_setup_theme', function () {
 
 
 /**
- * Creation of the new size
+ * Creation of the new size.
  *
  *
  * @since 0.3
  * @since 0.4 Change value of image_size
+ *
  */
 
 function use_new_image_size() {
@@ -313,12 +311,13 @@ add_action( 'after_setup_theme', 'use_new_image_size' );
 
 
 /**
- * function to register and change the first one connect
+ * Function to register and change the first one connect.
  *
  * @param string $sizes size
  *
  * @since 0.4
  * @return '$sizes'
+ *
  */
 function function_register($sizes){
 	// creation of data
@@ -343,12 +342,13 @@ function function_register($sizes){
 
 }
 /**
- * create and add the new size in the select of administration
+ * Create and add the new size in the select of administration.
  *
  * @param string $sizes size
  *
  * @since 0.4
  * @return '$sizes' '$custom_sizes'
+ *
  */
 
 function create_custom_image_size($sizes){
@@ -385,11 +385,12 @@ update_option( 'image_default_size', 'create_custom_image_size' );
 add_action( 'add_attachment', 'my_set_image_meta_upon_image_upload' );
 
 /**
- * Automatically set the image Title, Alt-Text, Caption & Description upon upload http://brutalbusiness.com/automatically-set-the-wordpress-image-title-alt-text-other-meta/ for adding the tags and categories: https://wordpress.org/plugins/seo-image/
+ * Automatically set the image Title, Alt-Text, Caption & Description upon upload http://brutalbusiness.com/automatically-set-the-wordpress-image-title-alt-text-other-meta/ for adding the tags and categories: https://wordpress.org/plugins/seo-image/.
  *
  * @param string $post_ID post_id
  *
  * @since 0.4
+ *
  */
 function my_set_image_meta_upon_image_upload( $post_ID ) {
 	// Check if uploaded file is an image, else do nothing
@@ -404,7 +405,7 @@ function my_set_image_meta_upon_image_upload( $post_ID ) {
 		$my_image_meta = array(
 			'ID'		=> $post_ID,			// Specify the image (ID) to be updated
 			'post_title'	=> $my_image_title,		// Set image Title to sanitized title
-		//	'post_excerpt'	=> $my_image_title,		// Set image Caption (Excerpt) to sanitized title
+		//	'post_excerpt'	=> $my_image_title,		// Set image Caption (Excerpt) to sanitized title ********
 			'post_content'	=> $my_image_title,		// Set image Description (Content) to sanitized title
 		);
 		// Set the image Alt-Text
