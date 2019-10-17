@@ -16,7 +16,7 @@
  * Plugin Name:       Featured Image for PressBooks
  * Plugin URI:        https://github.com/my-language-skills/featured-image-for-pressbooks
  * Description:       Use an external image as Featured Image of your post/page, add support of thumbnails in PressBooks CPTs and add administration columns to check featured image status.
- * Version:           0.5
+ * Version:           0.6
  * Author:            My Language Skills team
  * Author URI:        https://github.com/my-language-skills/
  * License:           GPL 3.0
@@ -26,6 +26,7 @@
  * Network: 					True
  */
 
+include_once plugin_dir_path( __FILE__ ) . "fifp-admin-settings.php";
 
 /**
  * Checking whether provided URL leads to image file of jpeg, jpg, gif, png formats.
@@ -67,7 +68,7 @@ function url_is_image( $url ) {
  */
 function thumbnail_url_field( $html ) {
 
-	//declae global variable $post
+	//declare global variable $post
 	global $post;
 
 	//try to retrieve metadata with image URL if exists
@@ -327,7 +328,7 @@ function function_register($sizes){
 	$temp3 = $sizes['full'];
 
 	// unset data
-	unset( $sizes['thumbnail']);
+ unset( $sizes['thumbnail']);
  unset( $sizes['medium']);
  unset( $sizes['large']);
  unset( $sizes['full']);
@@ -413,4 +414,14 @@ function my_set_image_meta_upon_image_upload( $post_ID ) {
 		// Set the image meta (e.g. Title, Excerpt, Content)
 		wp_update_post( $my_image_meta );
 	}
+}
+
+/**
+ * Function called from the theme in order to check if mobile featured images are disabled or not.
+ *
+ * @since 0.6
+ *
+ */
+function fifp_is_featured_image_disabled(){
+  return $option = get_option( 'fifp_disable_for_mobile' );
 }

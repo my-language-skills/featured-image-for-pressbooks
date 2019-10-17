@@ -6,8 +6,8 @@
 
 For upgrades, download the last stable version from Github, delete from FTP the old Plugin and install the new one.
 
-## Theme support 
-In order to properly utilize any feature of Featured Image for Pressboks CPTs the theme or child theme of Pressbooks you are goin gto use on your web-site **must** support featured images.
+## Theme support
+In order to properly utilize any feature of Featured Image for Pressboks CPTs the theme or child theme of Pressbooks you are going to use on your web-site **must** support featured images.
 
 If you would like to use our plugin with the one, which does not have featured images included support, below is the guide how to make your theme compatible with them.
 
@@ -20,6 +20,8 @@ If you would like to use our plugin with the one, which does not have featured i
 2. Add the following lines of code to ```your-needed-template(replace with the name of template where featured image will appear).php```:
 
 ```php
+if(!(wp_is_mobile() && fifp_is_featured_image_disabled()) {
+  // condition to check if displaying featured images is not disabled for mobile devices
     if ( has_post_thumbnail() ) {
    		$option = get_option("pressbooks_theme_options_web");
    		if ($option['webbook_width'] == '30em'){
@@ -32,9 +34,10 @@ If you would like to use our plugin with the one, which does not have featured i
    			the_post_thumbnail('featured-wide');
    		}
    	}
+  }
 ```
- **Note:** The code above in order to work properly should be located inside a loop if located in template. If you are going to locate in partial template, check whether this partial template is called inside loop 
-* If you are using a child theme, which does not have its own templates specified, you will need to clone those templates into your theme directory with according folder hierarchy and add the code above to cloned files in a location you would like your featured images to appear. 
+ **Note:** The code above in order to work properly should be located inside a loop if located in template. If you are going to locate in partial template, check whether this partial template is called inside loop
+* If you are using a child theme, which does not have its own templates specified, you will need to clone those templates into your theme directory with according folder hierarchy and add the code above to cloned files in a location you would like your featured images to appear.
 
 
 
