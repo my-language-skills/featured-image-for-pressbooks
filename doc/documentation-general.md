@@ -10,8 +10,8 @@ Featured Image for Pressbooks CPTs plugin main goal is following:
 ### Featured Image for Pressboks CPTs key features
 * Providing support of featured images with compatible sizes of books in different kinds of posts in Pressbooks environment
 * Creation of simple monitoring system for brief control of attached image
-* Allowance to attach external image as featured via URL
 * Disable displaying featured images for mobile devices.
+* Importing of featured images from source to its clones
 
 #### Soon
 

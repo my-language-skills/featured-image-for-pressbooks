@@ -6,7 +6,7 @@
 * Requires at least: 3.0.1
 * Tested up to: 5.2.2
 * Requires PHP: 5.6.0
-* Stable tag: 0.6
+* Stable tag: 0.7
 * License: GNU 3.0
 * License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -56,6 +56,24 @@ You can see all of the screenshots of the theme [here](https://github.com/my-lan
 ## Roadmap
 
 ## Changelog
+### 0.7
+* Major rework (upgrade) of plugin functionality
+
+* **ADDITIONS**
+  * Featured images are now able to be imported from Source to all of its clones from EFP Customization settings.
+  * Bottom field of featured image metabox in post-edit page changed to display information about availability of source images. More information in documentation-technical.
+
+* **REMOVED**
+  * Functionalities related to adding featured images by URL.
+
+* **ENCHANCEMENTS**
+  * documentation
+  * files renamed, some functions relocated
+
+* **List of Files revised**
+  * fifp-admin-settings.php
+  * featured-iamges-for-pressbooks.php
+
 ### 0.6
 * **ADDITIONS**
   * Featured images section in EFP Customization settings page.
