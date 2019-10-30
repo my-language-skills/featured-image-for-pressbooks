@@ -226,13 +226,12 @@ function create_custom_image_size($sizes){
 		$width   = $options['webbook_width'];
 		if ($width == '40em') {
 					$custom_sizes = array(
-			'featured-standard' => 'Standard');
-			?><?php
+			'featured-standard' => 'Standard');		
 		}
 		if ($width == '30em') {
 			$custom_sizes = array(
 				'featured-narrow' => 'Narrow'
-			);?><?php
+			);
 		}
 		if ($width == '48em') {
 			$custom_sizes = array(
@@ -248,9 +247,6 @@ add_filter('image_size_names_choose', 'create_custom_image_size');
 add_filter('image_size_names_choose', 'function_register');
 // add uptade the size of the default size
 update_option( 'image_default_size', 'create_custom_image_size' );
-?>
-
-<?php
 
 add_action( 'add_attachment', 'my_set_image_meta_upon_image_upload' );
 
