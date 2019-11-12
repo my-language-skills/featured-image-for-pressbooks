@@ -1,3 +1,40 @@
+# Featured Image for Pressboks CPTs General Documentation
+
+Featured Image for Pressbooks CPTs provides handy complement for PressBooks environment, which allows attachment of images to all the visible post types provided by Pressbooks.
+
+## About Featured Image for Pressboks CPTs Plugin
+Featured Image for Pressbooks CPTs plugin main goal is following:
+**providing an ability of featuring images on books sections**
+
+
+### Featured Image for Pressboks CPTs key features
+* Providing support of featured images with compatible sizes of books in different kinds of posts in Pressbooks environment
+* Creation of simple monitoring system for brief control of attached image
+* Disable displaying featured images for mobile devices.
+* Importing of featured images from source to its clones
+
+#### Soon
+
+## Complements
+
+### Theme
+In order to Featured Image for Pressboks CPTs work properly it **must** be utilized with a theme, which supports featured images by itself.
+
+If you want to integrate this plugin with the theme you would like to use, follow the guide in [Technical Documentation](documentation-technical.md) to see how you can organize it.
+
+------
+
+*WORKFLOW:*
+ 1. We set thumbnail images we want to use in SOURCE BOOK in the edit-post page featured image metabox.
+ 2. After we are done, go to EFP Customization setting and RUN 'Import featured images to the book clones' button and thumbnails set in SOURCE book are now available in CLONE book posts.
+ 3. In case we do not want to use specific thumbnail inherited from the SOURCE in specific post, we can override this by selecting thumbnail locally in specific post.
+ 4. Once import was done, when thumbnail is changed in SOURCE it changes in all the clones in related posts automatically.
+
+ * Since thumbnail in CLONES is pulled from the SOURCE site (file), when this file is deleted it will no longer be available in the CLONES too.
+ * In CLONE edit-post page featured image metabox we are informed about current state of thumbnail state of import and set.
+
+ ------
+
 # Featured Image for Pressboks CPTs Technical Documentation
 
 ## Installation and Upgrades
@@ -63,21 +100,12 @@ if (is_plugin_active('featured-image-for-pressbooks/featured-image-for-pressbook
 	 } } ?>
 
 ```
- **Note:** The code above in order to work properly should be located inside a loop if located in template. If you are going to locate in partial template, check whether this partial template is called inside loop
+**Note:** The code above in order to work properly should be located inside a loop if located in template. If you are going to locate in partial template, check whether this partial template is called inside loop
 * If you are using a child theme, which does not have its own templates specified, you will need to clone those templates into your theme directory with according folder hierarchy and add the code above to cloned files in a location you would like your featured images to appear.
 
- **IMPORT thumbnails SOURCE -> CLONE:**
- * Since v0.7 of the featured_images_for_pressbooks plugin it is possible to populate thumbnails from the source to its clones.
- * Functionality of the plugin generates SOURCE -> CLONE relationships across multisite and based on this data is able to set thumbnails in chapter/part/front_matter/appendix posts.
-
-*WORKFLOW:*
- 1. We set thumbnail images we want to use in SOURCE BOOK in the edit-post page featured image metabox.
- 2. After we are done, go to EFP Customization setting and RUN 'Import featured images to the book clones' button and thumbnails set in SOURCE book are now available in CLONE book posts.
- 3. In case we do not want to use specific thumbnail inherited from the SOURCE in specific post, we can override this by selecting thumbnail locally in specific post.
- 4. Once import was done, when thumbnail is changed in SOURCE it changes in all the clones in related posts automatically.
-
- * Since thumbnail in CLONES is pulled from the SOURCE site (file), when this file is deleted it will no longer be available in the CLONES too.
- * In CLONE edit-post page featured image metabox we are informed about current state of thumbnail state of import and set.
+**IMPORT thumbnails SOURCE -> CLONE:**
+* Since v0.7 of the featured_images_for_pressbooks plugin it is possible to populate thumbnails from the source to its clones.
+* Functionality of the plugin generates SOURCE -> CLONE relationships across multisite and based on this data is able to set thumbnails in chapter/part/front_matter/appendix posts.
 
 ---
 Back to [Readme](../README.md).
