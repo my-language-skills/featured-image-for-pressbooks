@@ -10,22 +10,27 @@
 * License: GNU 3.0
 * License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
-A WordPress plugin that extends PressBooks with new image sizes and feature image.
+A WordPress plugin that extends PressBooks with new image sizes and Feature images.
 
 ## Community / Support
 
 You can contact us via our [chat](https://gitter.im/books4languages/)  and talk to us.                                  
-
 
 ## Description
 
 Featured Image for Pressbooks CPTs extends basic PressBooks plugin functionality by supporting thumbnails for all kinds of posts and also provides an ability to set thumbnail with external link,
 with addition of visual control of attached thumbnail and support of PressBooks book sizes in front-end and in text area.
 
-By activating, Pressbooks CPTs will create new media sizes with the same Width as the Webbook Width in theme options (**508** for Narrow; **688** for Standard; **832** for Wide).
-* A feature image will choose the same image size as the Webbook Width (Narrow, Standard or Wide)
-* The attachment display settinngs will create one new size (selected by default) with the same Width of the Webbook Width (Narrow or Standard or Wide)
-* With use of extensions-for-pressbooks plugin we are able to toggle advanced settings for the plugin. Such as option to turn off displaying featured images in mobile devices.
+By activating, Pressbooks CPTs will create additional image sizes with the same Width as the Webbook Width (in theme options **508** for Narrow; **688** for Standard; **832** for Wide). The feature image will use the same image size as the Webbook width (Narrow, Standard or Wide).
+
+Feature image for PressBooks automatically set the image Title, Alt-Text, Caption & Description upon upload to any image, not just Feature Images.
+
+If extensions-for-pressbooks plugin is activate, a new settings page will be available on Appeareance where advance settins will be available.
+
+* Feature images deactivation to mobiles.
+* Import images from parent book.
+
+Import images from parent books means: If the book is created by cloning a book, the post of the child books can import the images from the parent book. Imported feature images can be overwritten.
 
 ## Installation
 

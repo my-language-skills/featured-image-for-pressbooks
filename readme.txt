@@ -14,11 +14,11 @@ You can have features images and images with the post width size in a PressBooks
 == Description ==
 
 This plugin provides the possibility to use images adapted to a PressBooks installation. Features:
-* Use an external image as Featured Image of your PressBooks CPTs.
 * Add support of thumbnails in PressBooks CPTs.
-* Add administration columns to check featured image status.
-* New images with the post max size (narrow - 508px, standard - 688px, wide - 832px)
+* Use an image as Featured Image of your PressBooks CPTs.
+* New images sizes with the post max size (narrow - 508px, standard - 688px, wide - 832px)
 * New sizes in attachment display settinngs. By default is selected the size of the blog.
+* Option to deactivate feature images at mobiles.
 
 **Only works with [multisite](https://wordpress.org/support/article/create-a-network/) installation!**
 **Only works with [PressBooks](https://github.com/pressbooks/pressbooks) installation!**
