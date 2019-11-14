@@ -23,6 +23,7 @@
  * Plugin URI:        https://github.com/my-language-skills/featured-image-for-pressbooks
  * Description:       Use an external image as Featured Image of your post/page, add support of thumbnails in PressBooks CPTs and add administration columns to check featured image status.
  * Version:           0.7
+ * Pressbooks tested up to: 5.10
  * Author:            My Language Skills team
  * Author URI:        https://github.com/my-language-skills/
  * License:           GPL 3.0
@@ -226,7 +227,7 @@ function create_custom_image_size($sizes){
 		$width   = $options['webbook_width'];
 		if ($width == '40em') {
 					$custom_sizes = array(
-			'featured-standard' => 'Standard');		
+			'featured-standard' => 'Standard');
 		}
 		if ($width == '30em') {
 			$custom_sizes = array(
