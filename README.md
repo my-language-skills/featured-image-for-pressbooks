@@ -74,6 +74,10 @@ You can see all of the screenshots of the theme [here](https://github.com/my-lan
 * **ENCHANCEMENTS**
   * documentation
   * files renamed, some functions relocated
+  * Remove displaying of disabled RUN button in clone books
+
+* **BUGFIX**
+  * Variables check.
 
 * **List of Files revised**
   * fifp-admin-settings.php

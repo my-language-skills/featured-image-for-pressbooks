@@ -40,19 +40,20 @@ function fifp_init_featured_image_section(){
                        'fifp_mobile_option_callback',
                        'theme-customizations',
                        'featured_image_section');
-     //field 2
-    add_settings_field('fifp_import_featured_image_to_clones_button',
-                      'Import featured images to the book clones',
-                      'fifp_import_fi_to_clones_button_callback',
-                      'theme-customizations',
-                      'featured_image_section');
 
+    if ("source" == fifp_is_site_source()) { // show this field only in Source books.
+         //field 2
+        add_settings_field('fifp_import_featured_image_to_clones_button',
+                          'Import featured images to the book clones',
+                          'fifp_import_fi_to_clones_button_callback',
+                          'theme-customizations',
+                          'featured_image_section');
+
+        register_setting( 'theme-customizations-grp',
+                          'fifp_import_fi_to_clones_button_callback');
+     }
     register_setting( 'theme-customizations-grp',
- 											'fifp_disable_for_mobile');
-
-    register_setting( 'theme-customizations-grp',
-                      'fifp_import_fi_to_clones_button_callback');
-
+                      'fifp_disable_for_mobile');
     add_option('fifp_disable_for_mobile',0);
 
  }
@@ -85,15 +86,9 @@ function fifp_mobile_option_callback(){
  *
  */
 function fifp_import_fi_to_clones_button_callback(){
-  if ("clone" == fifp_is_site_source()){
-    echo '<form method="post" action="">
-            <input type="submit" name="clone_disabled" value="RUN" disabled="disabled"/> (Option enabled only in source books)
-         </form>';
-  } elseif ("source" == fifp_is_site_source()) {
     echo '<form method="post" action="">
             <input type="submit" name="import_fi_submit_btn" value="RUN" />
          </form>';
-  }
 }
 
 add_action( 'init', 'fifp_init_importing_process' );

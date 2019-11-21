@@ -312,10 +312,9 @@ function fifp_thumbnail_source_field($html){
 
 		if (isset($post_query_result)){
 			$source_post_id_of_post_name_slug = (int) $post_query_result->ID;   // related ID of the clone
+			$source_fi_id = get_post_meta($source_post_id_of_post_name_slug, '_thumbnail_id', TRUE ) ? : "";
+			$source_fi = wp_get_attachment_image($source_fi_id, 'medium' );
 		}
-
-		$source_fi_id = get_post_meta($source_post_id_of_post_name_slug, '_thumbnail_id', TRUE ) ? : "";
-		$source_fi = wp_get_attachment_image($source_fi_id, 'medium' );
 	restore_current_blog();
 
 	// set variables for following conditions
