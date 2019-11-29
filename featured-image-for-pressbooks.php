@@ -11,6 +11,7 @@
  * Dictionary of words with same meanings used across:
  * 	site == blog
  * 	source == original book
+ *  clone == book which is cloned from source book (contains 'pb_is_based_on' key)
  * 	fi == featured image
  * 	fifp == featured_image_for_pressbooks
  *
@@ -22,8 +23,8 @@
  * Plugin Name:       Featured Image for PressBooks
  * Plugin URI:        https://github.com/my-language-skills/featured-image-for-pressbooks
  * Description:       Use an external image as Featured Image of your post/page, add support of thumbnails in PressBooks CPTs and add administration columns to check featured image status.
- * Version:           0.7
- * Pressbooks tested up to: 5.10
+ * Version:           0.8
+ * Pressbooks up to:  5.11
  * Author:            My Language Skills team
  * Author URI:        https://github.com/my-language-skills/
  * License:           GPL 3.0
@@ -45,7 +46,7 @@ include_once plugin_dir_path( __FILE__ ) . "fifp-admin-settings.php";
  * @since 0.1
  *
  */
-function url_is_image( $url ) {
+function fifp_url_is_image( $url ) {
 
 	//check if URL is valid in general format
 	if ( ! filter_var( $url, FILTER_VALIDATE_URL ) ) {
@@ -69,7 +70,7 @@ function url_is_image( $url ) {
  * @since 0.1
  *
  */
-function add_thumbnail_support () {
+function fifp_add_thumbnail_support () {
 	add_post_type_support( 'chapter', 'thumbnail' );
 	add_post_type_support( 'part', 'thumbnail' );
 	add_post_type_support( 'front-matter', 'thumbnail' );
@@ -77,13 +78,13 @@ function add_thumbnail_support () {
 }
 
 //initiate featured images support
-add_action('init', 'add_thumbnail_support');
+add_action('init', 'fifp_add_thumbnail_support');
 
 add_filter( 'admin_post_thumbnail_html', 'fifp_thumbnail_source_field' );
 //<
 
 /****** Add Thumbnails in Manage Posts/Pages List ******/
-if ( !function_exists('AddThumbColumn')) {
+if ( !function_exists('fifp_add_thumb_column')) {
 
 	/**
 	 * Adding featured image column to administration area.
@@ -95,8 +96,7 @@ if ( !function_exists('AddThumbColumn')) {
 	 * @since 0.1
 	 *
 	 */
-	function AddThumbColumn( $cols ) {
-
+	function fifp_add_thumb_column( $cols ) {
 		$cols['thumbnail'] = __( 'Thumbnail' );
 
 		return $cols;
@@ -112,9 +112,7 @@ if ( !function_exists('AddThumbColumn')) {
  * @since 0.1
  *
  */
-function AddThumbValue($column_name, $post_id) {
-
-
+function fifp_add_thumb_value($column_name, $post_id) {
 	if ( 'thumbnail' == $column_name ) {
 
 		//get featured image id
@@ -135,20 +133,20 @@ function AddThumbValue($column_name, $post_id) {
 //> Apply new columns to PressBooks CPTs
 
 	//for chapter CPT
-	add_filter( 'manage_chapter_posts_columns', 'AddThumbColumn' );
-	add_action( 'manage_chapter_posts_custom_column', 'AddThumbValue', 10, 2 );
+	add_filter( 'manage_chapter_posts_columns', 'fifp_add_thumb_column' );
+	add_action( 'manage_chapter_posts_custom_column', 'fifp_add_thumb_value', 10, 2 );
 
 	//for part CPT
-	add_filter( 'manage_part_posts_columns', 'AddThumbColumn' );
-	add_action( 'manage_part_posts_custom_column', 'AddThumbValue', 10, 2 );
+	add_filter( 'manage_part_posts_columns', 'fifp_add_thumb_column' );
+	add_action( 'manage_part_posts_custom_column', 'fifp_add_thumb_value', 10, 2 );
 
 	//for front-matter CPT
-	add_filter( 'manage_front-matter_posts_columns', 'AddThumbColumn' );
-	add_action( 'manage_front-matter_posts_custom_column', 'AddThumbValue', 10, 2 );
+	add_filter( 'manage_front-matter_posts_columns', 'fifp_add_thumb_column' );
+	add_action( 'manage_front-matter_posts_custom_column', 'fifp_add_thumb_value', 10, 2 );
 
 	//set columns for back-matter CPT
-	add_filter( 'manage_back-matter_posts_columns', 'AddThumbColumn' );
-	add_action( 'manage_back-matter_posts_custom_column', 'AddThumbValue', 10, 2 );
+	add_filter( 'manage_back-matter_posts_columns', 'fifp_add_thumb_column' );
+	add_action( 'manage_back-matter_posts_custom_column', 'fifp_add_thumb_value', 10, 2 );
 //<
 
 //adding new featured images sizes
@@ -171,14 +169,14 @@ add_action( 'after_setup_theme', function () {
  *
  */
 
-function use_new_image_size() {
+function fifp_use_new_image_size() {
     if ( function_exists( 'add_image_size' ) ) {
         add_image_size( 'featured-narrow', 508, 0, false );
 				add_image_size( 'featured-standard', 688,0, false  );
 				add_image_size( 'featured-wide', 832,0, false  );
     }
 }
-add_action( 'after_setup_theme', 'use_new_image_size' );
+add_action( 'after_setup_theme', 'fifp_use_new_image_size' );
 
 
 /**
@@ -190,7 +188,7 @@ add_action( 'after_setup_theme', 'use_new_image_size' );
  * @return '$sizes'
  *
  */
-function function_register($sizes){
+function fifp_function_register_image_sizes($sizes){
 	// creation of data
 	$temp = $sizes['thumbnail'];
 	$temp1 = $sizes['medium'];
@@ -222,7 +220,7 @@ function function_register($sizes){
  *
  */
 
-function create_custom_image_size($sizes){
+function fifp_create_custom_image_size($sizes){
 	$options = get_option( 'pressbooks_theme_options_web' );
 		$width   = $options['webbook_width'];
 		if ($width == '40em') {
@@ -243,13 +241,13 @@ function create_custom_image_size($sizes){
     return array_merge( $sizes, $custom_sizes );
 }
 // add new filter of the new size
-add_filter('image_size_names_choose', 'create_custom_image_size');
+add_filter('image_size_names_choose', 'fifp_create_custom_image_size');
 // add new change the older of the list
-add_filter('image_size_names_choose', 'function_register');
+add_filter('image_size_names_choose', 'fifp_function_register_image_sizes');
 // add uptade the size of the default size
-update_option( 'image_default_size', 'create_custom_image_size' );
+update_option( 'image_default_size', 'fifp_create_custom_image_size' );
 
-add_action( 'add_attachment', 'my_set_image_meta_upon_image_upload' );
+add_action( 'add_attachment', 'fifp_set_custom_image_meta_upon_image_upload' );
 
 /**
  * Automatically set the image Title, Alt-Text, Caption & Description upon upload http://brutalbusiness.com/automatically-set-the-wordpress-image-title-alt-text-other-meta/ for adding the tags and categories: https://wordpress.org/plugins/seo-image/.
@@ -259,7 +257,7 @@ add_action( 'add_attachment', 'my_set_image_meta_upon_image_upload' );
  * @since 0.4
  *
  */
-function my_set_image_meta_upon_image_upload( $post_ID ) {
+function fifp_set_custom_image_meta_upon_image_upload( $post_ID ) {
 	// Check if uploaded file is an image, else do nothing
 	if ( wp_attachment_is_image( $post_ID ) ) {
 		$my_image_title = get_post( $post_ID )->post_title;
@@ -324,7 +322,7 @@ function fifp_thumbnail_source_field($html){
 	$source_or_clone = fifp_is_site_source();
 
 	if ("source" == $source_or_clone){
-		$html .= '<hr> <br><b>' . __( 'This book is source', 'txtdomain' ) . '</b>';
+		$html .= '<hr> <br><b>' . __( 'This book is considered as source', 'txtdomain' ) . '</b>';
 			return $html;
 
 		}	elseif (empty($option_ext)) {
@@ -344,7 +342,7 @@ function fifp_thumbnail_source_field($html){
 		$html .= $source_fi;
 			return $html;
 
-		}  else {
+		} else {
 		$html .= '<hr><br> <b>' . __( 'Source image is imported and is set', 'txtdomain' ) . '</b><br><br>';
 		$html .= $source_fi;
 			return $html;
@@ -355,7 +353,7 @@ function fifp_thumbnail_source_field($html){
 
 /**
  * Main procedural function handling import of featured images from source to all of its clones (post by post).
- * This function is called by clicking on the button in EFP Customization setting page of a source book.
+ * This function is called by clicking on the RUN button in EFP Customization setting page of a source book.
  *
  * @since 0.7
  *
@@ -474,11 +472,9 @@ function fifp_get_clone_source_id(){
  *
  */
 function fifp_get_clones(){
-
 	// first we need to get relationships between current source and its clones
   $source_site_relation = fifp_find_source_clone_relatinoships();
   $current_blog_clones = array();				// declare array
-
   $currently_opened_blog_ID = get_current_blog_id();
 
 	// loop through each relation SOURCE => CLONE and get the clones related to the current source
@@ -564,10 +560,9 @@ function fifp_get_fi_info(){
 				if (empty($source_fi_id)){
 					return;
 				}
-
 				return $source_fi_id;
-			}
-}
+		 }
+	}
 
 /**
  * Function that determines if post have or have not external thumbnail set. Called from front-end.
@@ -587,7 +582,7 @@ function fifp_has_ext_thumbnail(){
 }
 
 /**
- * Function that determines if site is source or is not.
+ * Function that determines if site is source or is not based on presence of pb_is_based_on key in book-info post
  *
  * @return 'source' or 'clone'
  * @since 0.7

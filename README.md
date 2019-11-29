@@ -61,6 +61,14 @@ You can see all of the screenshots of the theme [here](https://github.com/my-lan
 ## Roadmap
 
 ## Changelog
+### 0.8
+* **ENCHANCEMENTS**
+  * Functions renaming (prefixes)
+  * Minor text changes and visual enhancements
+
+* **REMOVED**
+  * Empty section callback function
+
 ### 0.7
 * Major rework (upgrade) of plugin functionality
 

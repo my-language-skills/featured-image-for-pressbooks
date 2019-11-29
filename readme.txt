@@ -79,6 +79,14 @@ The images would be created in that new sizes. You can just let them in the serv
 
 == Changelog ==
 
+=== 0.8 ===
+* **ENCHANCEMENTS**
+  * Functions renaming (prefixes)
+  * Minor text changes and visual enhancements
+
+* **REMOVED**
+  * Empty section callback function
+
 === 0.7 ===
 * Major rework (upgrade) of plugin functionality
 

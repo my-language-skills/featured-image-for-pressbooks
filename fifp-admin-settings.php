@@ -32,19 +32,20 @@ function fifp_init_featured_image_section(){
     //section
     add_settings_section('featured_image_section',
                          'Featured images section',
-                         'featured_image_section_description',
+                         '',
                          'theme-customizations');
     //field 1
     add_settings_field('fifp_disable_for_mobile',
-                       'Disable Featured image on mobile',
+                       'Featured images on mobile',
                        'fifp_mobile_option_callback',
                        'theme-customizations',
                        'featured_image_section');
 
     if ("source" == fifp_is_site_source()) { // show this field only in Source books.
+
          //field 2
         add_settings_field('fifp_import_featured_image_to_clones_button',
-                          'Import featured images to the book clones',
+                          'Export to cloned books',
                           'fifp_import_fi_to_clones_button_callback',
                           'theme-customizations',
                           'featured_image_section');
@@ -55,18 +56,7 @@ function fifp_init_featured_image_section(){
     register_setting( 'theme-customizations-grp',
                       'fifp_disable_for_mobile');
     add_option('fifp_disable_for_mobile',0);
-
  }
-
- /**
- * Section description
- *
- * @since 0.6
- *
- */
-function featured_image_section_description(){
-  echo '<p></p>';
-}
 
 /**
  * Callback functions for monitoring and changing checbox state.
@@ -76,7 +66,7 @@ function featured_image_section_description(){
  */
 function fifp_mobile_option_callback(){
   $option = get_option( 'fifp_disable_for_mobile' );
-	echo '<input name="fifp_disable_for_mobile" id="fifp_disable_for_mobile" type="checkbox" value="1" class="code" ' . checked( 1, $option, false ) . ' /> Check to disable featured image on mobile devices.';
+	echo '<input name="fifp_disable_for_mobile" id="fifp_disable_for_mobile" type="checkbox" value="1" class="code" ' . checked( 1, $option, false ) . ' /> '._('Disable featured images on mobile').'';
 }
 
 /**
@@ -87,8 +77,8 @@ function fifp_mobile_option_callback(){
  */
 function fifp_import_fi_to_clones_button_callback(){
     echo '<form method="post" action="">
-            <input type="submit" name="import_fi_submit_btn" value="RUN" />
-         </form>';
+            <input type="submit" class="button" name="import_fi_submit_btn" value="RUN" />
+          </form>';
 }
 
 add_action( 'init', 'fifp_init_importing_process' );
@@ -102,6 +92,6 @@ add_action( 'init', 'fifp_init_importing_process' );
 function fifp_init_importing_process() {
      if( isset( $_POST['import_fi_submit_btn'] ) ) {
           //header("Refresh:0; url=themes.php?page=theme-customizations");
-          fifp_import_source_images(); // tip: to debug fifp_import_source_images() place random error function inside before function ends
+          fifp_import_source_images();
      }
 }
