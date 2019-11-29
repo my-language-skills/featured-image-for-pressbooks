@@ -1,12 +1,12 @@
 # Featured Image for Pressboks CPTs
 
-* Contributors: @danzhik @huguespages   
+* Contributors: @danzhik @huguespages @lukastonhajzer
 * Donate link:
-* Tags: thumbnails, pressbooks
+* Tags: multisite, pressbooks, images, media, thumbnail, feature-image, wordpress plugin
 * Requires at least: 3.0.1
 * Tested up to: 5.2.2
 * Requires PHP: 5.6.0
-* Stable tag: 0.7
+* Stable tag: 0.8
 * License: GNU 3.0
 * License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
