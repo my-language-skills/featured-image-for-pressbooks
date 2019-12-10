@@ -1,5 +1,5 @@
 === Feature image for PressBooks ===
-Contributors: colomet, danzhik, huguespages
+Contributors: colomet, danzhik, huguespages, lukastonhajzer
 Donate link: https://opencollective.com/mylanguageskills
 Tags: multisite, pressbooks, images, media, thumbnail, feature-image, wordpress plugin
 Requires at least: 3.0.1
@@ -80,6 +80,8 @@ The images would be created in that new sizes. You can just let them in the serv
 == Changelog ==
 
 === 0.8 ===
+* **ADDITIONS**
+  * nonce, authorization checks
 * **ENCHANCEMENTS**
   * Functions renaming (prefixes)
   * Minor text changes and visual enhancements

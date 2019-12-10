@@ -17,9 +17,15 @@
 // initialize settings section only if conditions are valid
  if ((1 != get_current_blog_id()	|| !is_multisite())
       && is_plugin_active('pressbooks/pressbooks.php')
-      && is_plugin_active('extensions-for-pressbooks/extensions-for-pressbooks.php')){
+      && is_plugin_active('extensions-for-pressbooks/extensions-for-pressbooks.php')
+      && is_admin() ){
 
         add_action('admin_init','fifp_init_featured_image_section');
+
+        if (isset($_POST['import_fi_submit_btn']))
+        {
+          add_action( 'init', 'fifp_init_importing_process' ); // runs only when button submited and is in admin area
+        }
     }
 
 /**
@@ -29,6 +35,9 @@
 *
 */
 function fifp_init_featured_image_section(){
+    if (!current_user_can( 'manage_options' )){
+      return;
+    }
     //section
     add_settings_section('featured_image_section',
                          'Featured images section',
@@ -76,12 +85,13 @@ function fifp_mobile_option_callback(){
  *
  */
 function fifp_import_fi_to_clones_button_callback(){
-    echo '<form method="post" action="">
-            <input type="submit" class="button" name="import_fi_submit_btn" value="RUN" />
-          </form>';
-}
+  ?> <form method="post" action=""> <?php
 
-add_action( 'init', 'fifp_init_importing_process' );
+    wp_nonce_field( 'fifp_import_nonce_name', 'import_fi_submit_btn_nonce' );
+
+    ?> <input type="submit" class="button" name="import_fi_submit_btn" value="RUN" />
+  </form> <?php
+}
 
 /**
  * Function monitoring 'RUN' button activity. When clicked, initializes Main import function.
@@ -90,8 +100,8 @@ add_action( 'init', 'fifp_init_importing_process' );
  *
  */
 function fifp_init_importing_process() {
-     if( isset( $_POST['import_fi_submit_btn'] ) ) {
-          //header("Refresh:0; url=themes.php?page=theme-customizations");
-          fifp_import_source_images();
-     }
+  if (wp_verify_nonce( $_POST['import_fi_submit_btn_nonce'],'fifp_import_nonce_name'))
+  {
+    fifp_import_source_images();
+  }
 }

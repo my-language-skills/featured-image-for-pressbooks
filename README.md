@@ -1,7 +1,7 @@
 # Featured Image for Pressboks CPTs
 
-* Contributors: @danzhik @huguespages @lukastonhajzer
-* Donate link:
+* Contributors: @colomet @danzhik @huguespages @lukastonhajzer
+* Donate link: https://opencollective.com/mylanguageskills
 * Tags: multisite, pressbooks, images, media, thumbnail, feature-image, wordpress plugin
 * Requires at least: 3.0.1
 * Tested up to: 5.2.2
@@ -62,6 +62,9 @@ You can see all of the screenshots of the theme [here](https://github.com/my-lan
 
 ## Changelog
 ### 0.8
+* **ADDITIONS**
+  * nonce, authorization checks
+
 * **ENCHANCEMENTS**
   * Functions renaming (prefixes)
   * Minor text changes and visual enhancements
