@@ -445,7 +445,7 @@ function fifp_import_source_images(){
 function fifp_get_clone_source_id(){
   	global $wpdb;
     $table_name = $wpdb->prefix . 'posts'; 						// set prefix of the table
-    $book_info_id = $wpdb->get_row("SELECT ID FROM $table_name WHERE post_name = 'book-information';"); // get ID of the book_info post
+    $book_info_id = $wpdb->get_row("SELECT ID FROM $table_name WHERE post_type = 'metadata';"); // get ID of the book_info post
 
     if ($book_info_id){
       $book_info_id = get_object_vars($book_info_id); // extract content of the object
@@ -591,7 +591,7 @@ function fifp_has_ext_thumbnail(){
 function fifp_is_site_source(){
   global $wpdb;
   $table_name = $wpdb->prefix . 'posts'; // set prefix of the table
-  $book_info_id = $wpdb->get_row("SELECT ID FROM $table_name WHERE post_name = 'book-information';"); //get ID of the book_info post
+  $book_info_id = $wpdb->get_row("SELECT ID FROM $table_name  WHERE post_type = 'metadata';"); //get ID of the book_info post
 
   if ($book_info_id){
     $book_info_id = get_object_vars($book_info_id); // extract content of the object

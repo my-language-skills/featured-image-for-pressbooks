@@ -69,6 +69,9 @@ You can see all of the screenshots of the theme [here](https://github.com/my-lan
   * Functions renaming (prefixes)
   * Minor text changes and visual enhancements
 
+* **MODIFICATIONS**
+  * Change querry checking from post_name to post_type (more stable)
+
 * **REMOVED**
   * Empty section callback function
 
