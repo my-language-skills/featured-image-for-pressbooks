@@ -572,15 +572,13 @@ function fifp_get_fi_info(){
  *
  */
 function fifp_has_ext_thumbnail(){
-	global $post;	
-	if ($post){
-		$ext_thumb = get_post_meta($post->ID, '_thumbnail_ext_source_id', TRUE );
+	global $post;
+	$ext_thumb = get_post_meta($post->ID, '_thumbnail_ext_source_id', TRUE );
 		if (!empty($ext_thumb)){
 			return 1;
 		}	else {
 			return 0;
 		}
-	}
 }
 
 /**
